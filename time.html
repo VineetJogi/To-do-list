@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+</head>
+<body>
+    <div class="hour"></div>
+    <div class="minute"></div>
+<div class="sec"></div>
+<div class="meridian"></div>
+</body>
+<script>
+    function display(){
+        let mydate = new Date()
+    document.querySelector('.hour').innerText = mydate.getHours()-12
+    document.querySelector('.minute').innerText = mydate.getMinutes()
+    document.querySelector('.sec').innerText = mydate.getSeconds()
+
+    if(mydate.getHours()>=12 && mydate.getHours()<=23){
+        document.querySelector('.meridian').innerText = 'PM'
+    }
+    else{        
+        document.querySelector('.meridian').innerText = 'AM'
+
+    }
+    }
+
+    setInterval(display , 1000)
+    
+</script>
+</html>

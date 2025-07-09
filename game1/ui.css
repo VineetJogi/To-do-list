@@ -1,0 +1,71 @@
+h1,h2{
+   font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+  color:aliceblue
+}
+
+
+body{
+    text-align: center;
+    justify-items: center;
+    background-image: url("bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: top left;
+}
+.select{
+    display: flex;
+    font-display: row;
+    gap: 5px;
+}
+
+button{
+    padding: 15px;
+    margin: 4px;
+    cursor:pointer;
+    height: 250px;
+    width: 250px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+img{
+    height: 200px;
+}
+
+/* button:hover{
+    background-color: crimson;
+}
+
+button:active{
+    background-color:yellowgreen; 
+}
+*/
+.result,.score,.fresult{
+    font-size: 25px;
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:aliceblue
+}
+/**!to apply the effect name 'filter' with duration 0.3 sec**/
+/* .select button{
+    transition: filter 0.3s;
+} */
+/**!to apply the blur effect on select div when hovered**/
+/* .select:hover button{
+    filter: blur(2px);
+} */
+/*!to remove the blur effect on the hovered button*/
+/* .select button:hover{
+    filter: none;
+} */
+ #resetBtn{
+    height: auto;
+    width: auto;
+    color:aliceblue
+ }
+
+ #resetBtn:hover{
+    color:green
+ }

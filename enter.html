@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hehe</title>
+</head>
+<body>
+    
+  Age: <input type="number" id="age" placeholder="Enter Something">
+  <button onclick="printValue();">Submit</button>
+
+<script>
+  function printValue(){
+    var a=document.getElementById("age").value
+    console.log(a)
+  }
+</script>
+</body>
+</html>
+
+<!--!if there is form tag the onclick shuld be in it else it should be on the submit button tag-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hehe</title>
+</head>
+<body>
+    <form onsubmit="printValue(event)">
+        Age: <input type="text" id="age" placeholder="Enter Something">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function printValue(event) {
+            event.preventDefault(); // Prevents form from refreshing the page
+            var a = document.getElementById("age").value;
+            console.log(a);
+        }
+    </script>
+</body>
+</html> -->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calci.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>My Own Calculator</h1>
+        <div class="screen"></div>
+        <div class="buttons">
+            <div class="firstline">
+                <button class="n" onclick="currentScreen=currentScreen+'7';document.querySelector('.screen').innerHTML = currentScreen;">7</button>
+                <button class="n" onclick="currentScreen=currentScreen+'8';document.querySelector('.screen').innerHTML = currentScreen;">8</button>
+                <button class="n" onclick="currentScreen=currentScreen+'9';document.querySelector('.screen').innerHTML = currentScreen;">9</button>
+                <button class="o" onclick="currentScreen=currentScreen+'+';document.querySelector('.screen').innerHTML = currentScreen;">+</button>
+            </div>
+
+            <div class="secondline">
+                <button class="n" onclick="currentScreen=currentScreen+'4';document.querySelector('.screen').innerHTML = currentScreen;">4</button>
+                <button class="n" onclick="currentScreen=currentScreen+'5';document.querySelector('.screen').innerHTML = currentScreen;">5</button>
+                <button class="n" onclick="currentScreen=currentScreen+'6';document.querySelector('.screen').innerHTML = currentScreen;">6</button>
+                <button class="o" onclick="currentScreen=currentScreen+'-';document.querySelector('.screen').innerHTML = currentScreen;">-</button>
+            </div>
+
+            <div class="thirdline">
+                <button class="n" onclick="currentScreen=currentScreen+'1';document.querySelector('.screen').innerHTML = currentScreen;">1</button>
+                <button class="n" onclick="currentScreen=currentScreen+'2';document.querySelector('.screen').innerHTML = currentScreen;">2</button>
+                <button class="n" onclick="currentScreen=currentScreen+'3';document.querySelector('.screen').innerHTML = currentScreen;">3</button>
+                <button class="o" onclick="currentScreen=currentScreen+'*';document.querySelector('.screen').innerHTML = currentScreen;">*</button>
+            </div>
+
+            <div class="lastline">
+                <button class="c" onclick="currentScreen='';document.querySelector('.screen').innerHTML = currentScreen;">C</button>
+                <button class="n" onclick="currentScreen=currentScreen+'0';document.querySelector('.screen').innerHTML = currentScreen;">0</button>
+                <button class="r" onclick="currentScreen=Math.round(eval(currentScreen)*10000000)/10000000;document.querySelector('.screen').innerHTML = currentScreen;">=</button>
+                <button class="o" onclick="currentScreen=currentScreen+'/';document.querySelector('.screen').innerHTML = currentScreen;">/</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentScreen=''
+        document.querySelector('.screen').innerHTML = currentScreen;
+    </script>
+</body>
+</html>

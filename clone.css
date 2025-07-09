@@ -1,0 +1,25 @@
+button{
+    font-size: 24px;
+}
+.click1{
+    background-color: chartreuse;
+    border-width: 0px;
+    border-radius: 80px;
+    padding: 12px;
+    width: 180px;
+}
+
+.click2{
+    border-radius: 8px;
+    border-width: 6px;
+    width: 300px;
+    padding: 6px;
+}
+
+.click3{
+    background-color: chartreuse;
+    border-width: 0px;
+    border-radius: 80px;
+    padding: 12px;
+    width:fit-content;
+}

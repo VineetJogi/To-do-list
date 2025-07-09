@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game</title>
+    <link rel="stylesheet" href="ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Select among these 3 options</h1>
+    <h2>It's a game of BEST OF 3</h3>
+    <div class="select">
+        <button onclick="playGame('ROCK')"><img src="rock.png" alt="ROCK IMG"></button>
+        <button onclick="playGame('PAPER')"><img src="paper.png" alt="PAPER IMG"></button>
+        <button onclick="playGame('SCISSORS')"><img src="scissors.png" alt="SCISSORS IMG"></button>
+    </div>
+    <div class="result"></div>
+    <!-- <img src="cel.gif" class="gif" style="display: none;"> -->
+    <div class="score"></div>
+    <div class="fresult"></div>
+    <!-- <button class="reset" onclick="location.reload()">Reset Game</button> -->
+     <button id="resetBtn" onclick="location.reload()" style="display: none;">Play Again</button>
+
+
+    <script>
+        let Score = {
+            win: 0,
+            lost: 0,
+            tie: 0,
+        }
+
+        function playGame(userSelection){
+            const words = ['ROCK' , 'PAPER' , 'SCISSORS'];
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const selectedWord = words[randomIndex];
+            let message=''
+            let buttons = document.getElementsByTagName("button")
+            if((userSelection=='ROCK' && selectedWord=='PAPER') || (userSelection=='PAPER' && selectedWord=='SCISSORS') || (userSelection=='SCISSORS' && selectedWord=='ROCK')){
+            message="Computer chooses " + selectedWord+ ". YOU LOSE"
+            Score.lost++
+            }
+            else if((userSelection=='ROCK' && selectedWord=='SCISSORS') || (userSelection=='PAPER' && selectedWord=='ROCK') || (userSelection=='SCISSORS' && selectedWord=='PAPER'))
+            {
+                message="Computer chooses " + selectedWord + ". YOU WIN"
+                Score.win++
+            }
+            else{
+                message="Computer also chooses " + selectedWord + ". TIE"
+                Score.tie++
+            }
+            document.querySelector(".result").innerHTML=message
+            document.querySelector(".score").innerHTML=`Win: ${Score.win}   Lost: ${Score.lost}   Tie: ${Score.tie}`
+
+            if(Score.win==3){
+                document.querySelector(".fresult").innerHTML="You won the series"
+                document.querySelector(".fresult").style.display = "block"
+                document.body.style.backgroundImage = "url(cel.gif),url(bg.jpg)"
+                document.body.style.backgroundSize = "auto,cover"
+                document.body.style.backgroundRepeat = "repeat,no-repeat"
+                for(let i=0;i<buttons.length-1;i++){
+                    
+                    buttons[i].disabled=true //this is used to make a particular button unclickable
+                    //also this is diabling an array of 3 buttons
+                    document.getElementById("resetBtn").style.display = "inline"
+                }
+                
+            }
+            else if(Score.lost==3){
+                document.querySelector(".fresult").innerHTML="You lost the series"
+                for(let i=0;i<buttons.length-1;i++){
+                    buttons[i].disabled=true
+                    document.getElementById("resetBtn").style.display = "inline"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

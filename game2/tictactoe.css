@@ -1,0 +1,46 @@
+h1{
+    text-decoration: underline;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    /* background-image: url(bg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    
+}
+
+button{
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    cursor: pointer;
+    border-width: 3px;
+}
+
+.b1{
+    border-top:0; border-left: 0;}
+.b2{
+    border-top:0;}
+.b3{
+    border-top:0; border-right: 0;}
+.b4{
+    border-left: 0;}
+.b6{
+    border-right: 0;}
+.b7{
+    border-bottom:0; border-left: 0;}
+.b9{
+    border-bottom:0; border-right: 0;}
+.b8{
+    border-bottom:0;}
+

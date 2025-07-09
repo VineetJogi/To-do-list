@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Two Buttons</title>
+    <link rel="stylesheet" href="clone.css">
+</head>
+<body>
+    <button class="click1" onclick="cartQuantity+=1
+document.querySelector('#info').innerText = `Your bag has ${cartQuantity} items`    ">Add to Bag</button>
+
+    <button class="click2" onclick="cartQuantity-=1
+document.querySelector('#info').innerText = `Your bag has ${cartQuantity} items`">MOVE TO WISHLIST</button>
+
+    <button class="click3">Add 1 + 1 sale item</button>
+
+    <h2 id="info">Your bag has 2 items</h2>
+
+    <script>
+        let cartQuantity = 0
+        document.querySelector('#info').innerText = `Your bag has ${cartQuantity} items`
+    </script>
+</body>
+</html>
